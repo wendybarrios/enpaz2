@@ -14,3 +14,5 @@ router.put("/likePost/:id", postsController.likePost);
 router.delete("/deletePost/:id", postsController.deletePost);
 
 module.exports = router;
+// module exports is just spitting something out that we could use somewhere else
+
