@@ -40,10 +40,12 @@
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
+          <li class="col-4 justify-content-between mt-5">
             <a href="/post/<%= posts[i]._id%>">
               <!-- we use _id bc thats what mongodb creates in the documents -->
-              <img class="img-fluid" src="<%= posts[i].image%>">
+              <h2 class="text-dark p-3 mb-2 bg-light text-dark"><%= posts[i].createdAt %></h2>
+              <h3 class="text-dark"><%= posts[i].title %></h3>
+             <!-- <img class="img-fluid" src="<%= posts[i].image%>"> -->
             </a>
           </li>
         <% } %>
