@@ -1,7 +1,11 @@
+// builds our apis
 const express = require("express");
 const app = express();
+// help us build our models 
 const mongoose = require("mongoose");
+// handles our authentication
 const passport = require("passport");
+// users can stay logged in 
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
