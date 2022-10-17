@@ -121,3 +121,12 @@ a {
   .footer-16371 .copyright {
     color: #999999; }
 
+
+  .postcolor {
+    background-color:#f0f8ff;
+    font-size: 20px;
+    border-radius: 15px
+  }
+  .posttitle{
+    font-size: 15px;
+  }
