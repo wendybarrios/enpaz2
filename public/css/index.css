@@ -130,3 +130,13 @@ a {
   .posttitle{
     font-size: 15px;
   }
+
+  .monthname {
+    text-align:left !important;
+  }
+
+  .monthcontainer {
+    background-color: #FFE6D8 ;
+    font-size: 18px;
+    border-radius: 10px;
+  }

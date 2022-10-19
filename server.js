@@ -8,6 +8,7 @@ const passport = require("passport");
 // users can stay logged in 
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+// flash notification
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");

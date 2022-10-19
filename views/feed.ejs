@@ -2,25 +2,57 @@
 
 
 
-  
+  <!-- original container -->
+<div class="container">
+  <div class="container ">
+    <% for (let month = 0; month < 12; month++) { %> <!-- Go through months one at a time, month is stored as a number 0-11 (0 = January, 11 = December)  -->
+      <% let monthPosts = posts.filter((post) => post.createdAt.getMonth() === month) %> <!-- Filter the array for posts within the month -->
+        <% if (monthPosts.length) { %> <!-- Check if there are any posts in the filtered array. If there aren't any posts in the month, you don't need to display it -->
+          <div class="container justify-content-center mt-5">
+            <h4 class="monthcontainer px-4 py-2 d-inline"><%= monthPosts[0].createdAt.toLocaleString('default', { month: 'long'}) %></h4> <!-- Display the month name -->
+              <div class="row justify-content-left mt-5">
+                <% for(var i=0; i<monthPosts.length; i++) {%>
+                  <div class="col-4 justify-content-between my-2">
+                    <a href="/post/<%= monthPosts[i]._id%>">
+                    <!-- we use _id bc thats what mongodb creates in the documents -->
+                    <h2 class="text-dark p-3 mb-2 postcolor"><%= monthPosts[i].createdAt.toDateString() %></h2>
+                    <h3 class="text-dark posttitle"><%= monthPosts[i].title %></h3>
+                    <!-- <img class="img-fluid" src="<%= monthPosts[i].image%>"> -->
+                    </a>
+                  </div>
+                <% } %>
+              </div>
+          </div>
+        <% } %>
+      <% } %>
+  </div>
+
+
+
+
+
+
+
+
+
 
 <!-- original container -->
-  <div class="container ">
+  <!-- <div class="container ">
     <div class="row justify-content-center mt-5 text-info">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-4 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
+            <a href="/post/<%= posts[i]._id%>"> -->
               <!-- we use _id bc thats what mongodb creates in the documents -->
-              <h2 class="text-dark p-3 mb-2 postcolor"><%= posts[i].createdAt.toDateString() %></h2>
-              <h3 class="text-dark posttitle"><%= posts[i].title %></h3>
+              <!-- <h2 class="text-dark p-3 mb-2 postcolor"><%= posts[i].createdAt.toDateString() %></h2>
+              <h3 class="text-dark posttitle"><%= posts[i].title %></h3> -->
              <!-- <img class="img-fluid" src="<%= posts[i].image%>"> -->
-            </a>
+            <!-- </a>
           </li>
         <% } %>
         </ul>
     </div>
-  </div>  
+  </div>   -->
 
 
 
