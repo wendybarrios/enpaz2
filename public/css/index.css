@@ -304,3 +304,12 @@ a {
     width: 100%;
   }
 }
+
+
+@media screen and (max-width: 600px) {
+  .mainindexsignupbutton {
+    width: 30%;
+    margin-left: 30%;
+    margin-right: 30%
+  }
+}
