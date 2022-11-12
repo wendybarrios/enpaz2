@@ -2,6 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
 
+
 module.exports = {
   getProfile: async (req, res) => {
     try {
@@ -32,19 +33,29 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+      // const result = await cloudinary.uploader.upload(req.file.path);
 
+let result = '';
+if(req.file) {
+  result = await cloudinary.uploader.upload(req.file.path)
+} else {
+  result = await cloudinary.uploader.upload("https://res.cloudinary.com/dgrd0ce7i/image/upload/v1668290411/nutrition-for-eating-disorder-recovery_crk0ij.jpg")
+}
+console.log(result)
+    
+    
       await Post.create({
         title: req.body.title,
         image: result.secure_url,
-        cloudinaryId: result.public_id,
+        cloudinaryId: result.public_id || result,
         caption: req.body.caption,
         mood: req.body.mood,
         likes: 0,
         user: req.user.id,
       });
       console.log("Post has been added!");
-      res.redirect("/profile");
+      res.redirect("/feed");
+      // og: ('/profile')
     } catch (err) {
       console.log(err);
     }
