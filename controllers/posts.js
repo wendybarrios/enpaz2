@@ -35,21 +35,32 @@ module.exports = {
       // Upload image to cloudinary
       // const result = await cloudinary.uploader.upload(req.file.path);
 
+   
+      // upload cloudinary url; if it doesn't exist upload default image
 let result = '';
 if(req.file) {
   result = await cloudinary.uploader.upload(req.file.path)
 } else {
   result = await cloudinary.uploader.upload("https://res.cloudinary.com/dgrd0ce7i/image/upload/v1668290411/nutrition-for-eating-disorder-recovery_crk0ij.jpg")
 }
-console.log(result)
-    
-    
+
+ // check if mood text exists, if not return "-"
+let emptyString = '-'
+if(!req.body.mood){
+emptyString
+}
+// check if behaviors exists, if not return "-"
+if(!req.body.behaviors){
+emptyString
+}
+
       await Post.create({
         title: req.body.title,
         image: result.secure_url,
         cloudinaryId: result.public_id || result,
         caption: req.body.caption,
-        mood: req.body.mood,
+        mood: req.body.mood || emptyString,
+        behaviors: req.body.behaviors || emptyString,
         likes: 0,
         user: req.user.id,
       });
