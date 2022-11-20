@@ -5,8 +5,9 @@ const app = express();
 const mongoose = require("mongoose");
 // handles our authentication
 const passport = require("passport");
-// users can stay logged in 
+// allows users to stay logged in 
 const session = require("express-session");
+// stores sessions in db (if you leave the browser, you stay logged in)
 const MongoStore = require("connect-mongo")(session);
 // flash notification
 const methodOverride = require("method-override");
@@ -32,7 +33,7 @@ app.set("view engine", "ejs");
 //Static Folder
 app.use(express.static("public"));
 
-//Body Parsing
+//Body Parsing: allows us to pull stuff from a request ex. form sends post request
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
