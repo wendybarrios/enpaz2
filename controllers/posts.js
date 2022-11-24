@@ -23,6 +23,7 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
+  
       // use the comment model to find all comments that have a post property of the current post we are on
       const comments = await Comment.find({post:req.params.id}).sort({ createdAt: "desc" }).lean();
       res.render("post.ejs", { post: post, user: req.user, comments:comments });
