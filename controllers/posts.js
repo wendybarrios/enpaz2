@@ -37,7 +37,7 @@ module.exports = {
       // const result = await cloudinary.uploader.upload(req.file.path);
 
    
-      // upload cloudinary url; if it doesn't exist upload default image
+// upload cloudinary url; if it doesn't exist upload default image
 let result = '';
 if(req.file) {
   result = await cloudinary.uploader.upload(req.file.path)
