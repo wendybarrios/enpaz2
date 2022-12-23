@@ -35,9 +35,10 @@
                       <div class="card-body">
                     <a href="/post/<%= monthPosts[i]._id%>">
                     <!-- we use _id bc thats what mongodb creates in the documents -->
-                    <h5 class="card-title">Card title</h5>
-                    <h2 class="text-dark p-3 mb-2 postcolor">Date: <%= monthPosts[i].createdAt.toDateString() %> <br>Meal: <%= monthPosts[i].title %> <br></h2>
-                    <h3 class="text-dark posttitle"><%= monthPosts[i].title %></h3>
+                    <h5 class="card-title">Date: <%= monthPosts[i].createdAt.toDateString() %></h5>
+                    <h3 class="text-dark posttitle">Title: <%= monthPosts[i].title %></h3>
+                    <!-- <h2 class="text-dark p-3 mb-2 postcolor">Date: <%= monthPosts[i].createdAt.toDateString() %></h2>
+                    <h3 class="text-dark posttitle"><%= monthPosts[i].title %></h3> -->
                  
                     <!-- <img class="img-fluid" src="<%= monthPosts[i].image%>"> -->
                     </a>
