@@ -21,4 +21,7 @@ router.post("/signup", authController.postSignup);
 router.get("/about", aboutController.getIndex)
 router.get("/resources", resourcesController.getIndex)
 
+// newchange
+router.get("/withpicslayout", ensureAuth, postsController.withpicsFeed)
+
 module.exports = router;

@@ -1,5 +1,6 @@
 <%- include('partials/logged-in-header') -%>
 
+<div class="container">
 <div class="dropdown float-right">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    Switch Layout
@@ -10,12 +11,16 @@
     <a class="dropdown-item" href="/withpicslayout">With Pictures</a>
   </div>
 </div>
+</div>
 
 
 
 
-  <!-- original container -->
+ 
+<!-- practice -->
+
 <div class="container">
+  <section id="gallery">
   <div class="container ">
     <% for (let month = 0; month < 12; month++) { %> <!-- Go through months one at a time, month is stored as a number 0-11 (0 = January, 11 = December)  -->
       <% let monthPosts = posts.filter((post) => post.createdAt.getMonth() === month) %> <!-- Filter the array for posts within the month -->
@@ -25,20 +30,30 @@
               <div class="row justify-content-left mt-5">
                 <% for(var i=0; i<monthPosts.length; i++) {%>
                   <div class="col-4 justify-content-between my-2">
+                    <div class="card" style="width: 18rem;">
+                      <img src="<%= monthPosts[i].image%>" alt="" class="card-img-top">
+                      <div class="card-body">
                     <a href="/post/<%= monthPosts[i]._id%>">
                     <!-- we use _id bc thats what mongodb creates in the documents -->
-                    <h2 class="text-dark p-3 mb-2 postcolor"><%= monthPosts[i].createdAt.toDateString() %></h2>
+                    <h5 class="card-title">Card title</h5>
+                    <h2 class="text-dark p-3 mb-2 postcolor">Date: <%= monthPosts[i].createdAt.toDateString() %> <br>Meal: <%= monthPosts[i].title %> <br></h2>
                     <h3 class="text-dark posttitle"><%= monthPosts[i].title %></h3>
+                 
                     <!-- <img class="img-fluid" src="<%= monthPosts[i].image%>"> -->
                     </a>
+                  </div>
+                  </div>
                   </div>
                 <% } %>
               </div>
           </div>
         <% } %>
       <% } %>
+      </section>
   </div>
 
+
+  
 
 
 

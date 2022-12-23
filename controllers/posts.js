@@ -20,6 +20,16 @@ module.exports = {
       console.log(err);
     }
   },
+  // Below new Change
+  withpicsFeed: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("withpicsfeed.ejs", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  // Above new change
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
