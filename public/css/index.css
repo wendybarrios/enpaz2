@@ -327,3 +327,7 @@ margin-top: 14px;
   height: 25vh;
   object-fit: cover;
   }
+
+  #layoutButton{
+    margin-top: 10px;
+  }
