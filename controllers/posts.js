@@ -52,7 +52,7 @@ let result = '';
 if(req.file) {
   result = await cloudinary.uploader.upload(req.file.path)
 } else {
-  result = await cloudinary.uploader.upload("https://res.cloudinary.com/dgrd0ce7i/image/upload/v1668290411/nutrition-for-eating-disorder-recovery_crk0ij.jpg")
+  result = await cloudinary.uploader.upload("https://res.cloudinary.com/dgrd0ce7i/image/upload/v1672356883/360_F_238478220_kbmtrPrWwvm6JzJ90l9bETJsnGUFDWbo_amqpuq.jpg")
 }
 
  // check if mood text exists, if not return "-"
