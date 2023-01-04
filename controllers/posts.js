@@ -23,7 +23,7 @@ module.exports = {
   // Below new Change
   withpicsFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      const posts = await Post.find({user:req.user.id}).sort({ createdAt: "desc" }).lean();
       res.render("withpicsfeed.ejs", { posts: posts, user: req.user});
     } catch (err) {
       console.log(err);
