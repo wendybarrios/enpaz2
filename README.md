@@ -1,4 +1,4 @@
-<h1 align="center"><img width="150" src="https://user-images.githubusercontent.com/102558203/210466518-30285516-82e1-4219-bf1a-a9d2cdaaf364.png"><h1>
+<h1 align="center"><img width="125" src="https://user-images.githubusercontent.com/102558203/210466518-30285516-82e1-4219-bf1a-a9d2cdaaf364.png"><h1>
 
 
 # Enpaz: <a href="https://enpaz.herokuapp.com" target="_blank">Visit Here</a>
