@@ -1,4 +1,4 @@
-<h1 align="center"><img width="106" alt="Screen Shot 2023-01-03 at 5 12 06 PM" src="https://user-images.githubusercontent.com/102558203/210466518-30285516-82e1-4219-bf1a-a9d2cdaaf364.png"><h1>
+<h1 align="center"><img width="200" src="https://user-images.githubusercontent.com/102558203/210466518-30285516-82e1-4219-bf1a-a9d2cdaaf364.png"><h1>
 
 
 # Enpaz: <a href="https://enpaz.herokuapp.com" target="_blank">Visit Here</a>
@@ -11,7 +11,7 @@ password: tester1234
 
 **Tech used:** HTML, CSS, JavaScript, Bootstrap, Express, Node.js
 
-<img width="1405" alt="Screen Shot 2023-01-03 at 5 08 36 PM" src="https://user-images.githubusercontent.com/102558203/210466448-e272c5a7-0692-46de-a141-8c9b508c0cdf.png">
+<img width="1405" src="https://user-images.githubusercontent.com/102558203/210466448-e272c5a7-0692-46de-a141-8c9b508c0cdf.png">
 
 
 
