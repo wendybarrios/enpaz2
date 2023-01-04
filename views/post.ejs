@@ -36,6 +36,9 @@
       <h3>Behavior(s)</h3>
       <p><%= post.behaviors %></p>
     </div>
+
+
+
 <!-- add a comment -->
     <!-- <div class="mt-5">
       <h2>Add a comment</h2>
@@ -64,13 +67,13 @@
  <!------------------------------------------------------------------ -->
 <!-- practice container -->
  
-<div class="container">
+<!-- <div class="container"> -->
   <!-- <p class="usernamecontainer px-4 py-2 d-inline">Hello, <%= user.userName %></p> -->
-  <div class="row justify-content-center mt-5">
+  <!-- <div class="row justify-content-center mt-5">
     <div class="col-6 justify-content-center">
       <h2 class="text-center"><%= post.title %></h2>
       <img class="img-fluid" src="<%= post.image%>" />
-      <div class="row justify-content-between">
+      <div class="row justify-content-between"> -->
         <!-- <form
           class="col-1"
           action="/post/likePost/<%= post.id %>?_method=PUT"
@@ -79,7 +82,7 @@
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
         </form> -->
         <!-- <h3 class="col-3">Likes: <%= post.likes %></h3> -->
-        <%if(post.user == user.id){ %>
+        <!-- <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
@@ -95,10 +98,10 @@
       <h3>Mood(s)</h3>
       <p><%= post.mood %></p>
       <h3>Behavior(s)</h3>
-      <p><%= post.behaviors %></p>
+      <p><%= post.behaviors %></p> -->
 
       
-        <div class="mt-auto p-2">
+        <!-- <div class="mt-auto p-2">
           <%if(post.user == user.id){ %>
             <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
               <button class="btn btn-info fa fa-trash d-flex align-items-end" type="submit"></button>
@@ -108,7 +111,7 @@
      
 
     
-    </div>
+    </div> -->
 <!-- add a comment -->
     <!-- <div class="mt-5">
       <h2>Add a comment</h2>
@@ -132,8 +135,8 @@
       <a class="btn btn-primary" href="/feed">Return to Feed</a>
     </div> -->
     
-  </div>
-</div>
+  <!-- </div>
+</div> -->
 
 
 

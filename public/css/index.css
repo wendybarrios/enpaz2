@@ -331,3 +331,13 @@ margin-top: 14px;
   #layoutButton{
     margin-top: 10px;
   }
+
+  /* makes footer stick to the bottom of the page*/
+  .feedbody {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer{
+    margin-top: auto;
+}
