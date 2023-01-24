@@ -5,15 +5,18 @@ const app = express();
 const mongoose = require("mongoose");
 // handles our authentication
 const passport = require("passport");
-// allows users to stay logged in 
+// allows users to stay logged in as they move across our applications
 const session = require("express-session");
 // stores sessions in db (if you leave the browser, you stay logged in)
 const MongoStore = require("connect-mongo")(session);
-// flash notification
+// we can override methods coming in to be what we want them to put (ex. we can just use get/post and treat them as put/delete)
 const methodOverride = require("method-override");
+// flash notification (Ex. entering wrong password)
 const flash = require("express-flash");
 const logger = require("morgan");
+// connect to our database
 const connectDB = require("./config/database");
+// set up basic routes
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
