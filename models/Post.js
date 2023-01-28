@@ -29,6 +29,7 @@ const PostSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  // reference to the user model
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -39,4 +40,5 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
+// MongoDB collection named here - will give lowercase plural of name
 module.exports = mongoose.model("Post", PostSchema);
