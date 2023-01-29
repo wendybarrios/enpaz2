@@ -6,7 +6,11 @@ const Comment = require("../models/Comment");
 module.exports = {
   getProfile: async (req, res) => {
     try {
+      // since we have a session, each request (req) contains the logged-in user's info : req.user
+      // console.log(req.user) to see everything
+      // grabbing just the posts of the logged-in user
       const posts = await Post.find({ user: req.user.id });
+      // sending post data from mongodb and user data to ejs template
       res.render("profile.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
@@ -32,8 +36,11 @@ module.exports = {
   // Above new change
   getPost: async (req, res) => {
     try {
+      // id parameter comes from the post routes
+      // router.get("/:id", ensureAuth, postsController.getPost);
+      // http://localhost:5050/post/63b5f12898ea16c87a3b0618
+      // id: 63b5f12898ea16c87a3b0618
       const post = await Post.findById(req.params.id);
-  
       // use the comment model to find all comments that have a post property of the current post we are on
       const comments = await Comment.find({post:req.params.id}).sort({ createdAt: "desc" }).lean();
       res.render("post.ejs", { post: post, user: req.user, comments:comments });
