@@ -11,7 +11,15 @@
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="title" class="form-label">Meal: </label>
-                  <input type="text" class="form-control" id="title" name="title">
+                  <!-- <input type="text" class="form-control" id="title" name="title"> -->
+                  <select class="form-select" aria-label="Default select example" id="title" name="title">
+                    <option selected>Select Meal</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Brunch">Brunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Snack">Snack</option>
+                  </select>
               </div>
               <div class="mb-3">
                 <label for="caption" class="form-label">What I ate: </label>
@@ -39,13 +47,7 @@
 
 
 
-
-
-
-
-
-
-
+          
 
 
 
